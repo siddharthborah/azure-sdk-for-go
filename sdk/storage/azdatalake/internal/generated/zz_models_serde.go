@@ -239,6 +239,9 @@ func (p *Path) UnmarshalJSON(data []byte) error {
 		case "creationTime":
 			err = unpopulate(val, "CreationTime", &p.CreationTime)
 			delete(rawMsg, key)
+		case "etag":
+			err = unpopulate(val, "ETag", &p.ETag)
+			delete(rawMsg, key)
 		case "eTag":
 			err = unpopulate(val, "ETag", &p.ETag)
 			delete(rawMsg, key)
